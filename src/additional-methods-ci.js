@@ -19,3 +19,7 @@ $.validator.addMethod( "inlist", function( value, element, param ) {
 $.validator.addMethod( "alphanumericspaces", function( value, element ) {
     return this.optional( element ) || /^[\w\s]+$/i.test( value.trim() );
 }, "Letters, numbers, underscores and spaces only please" );
+
+$.validator.addMethod( "alphadash", function( value, element ) {
+    return this.optional( element ) || /^[\w-]+$/i.test( value.trim() );
+}, "Letters, numbers, underscores and dashes only please" );

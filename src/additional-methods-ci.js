@@ -6,7 +6,6 @@ $.validator.addMethod( "inlist", function( value, element, param ) {
     if ( this.optional( element ) ) {
         return true;
     }
-
     return value.indexOf(param) >= 0;
 }, $.validator.format( "{0} is not allowed. Please enter a set value" ) );
 

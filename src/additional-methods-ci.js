@@ -23,3 +23,15 @@ $.validator.addMethod( "alphanumericspaces", function( value, element ) {
 $.validator.addMethod( "alphadash", function( value, element ) {
     return this.optional( element ) || /^[\w-]+$/i.test( value.trim() );
 }, "Letters, numbers, underscores and dashes only please" );
+
+$.validator.addMethod( "numericdigit", function( value, element ) {
+    return this.optional( element ) || /^[\-+]?[0-9]*\.?[0-9]+$/.test( value );
+}, "Only whole positive and negative digits allowed" );
+
+$.validator.addMethod( "integerdigit", function( value, element ) {
+    return this.optional( element ) || /^[\-+]?[0-9]+$/.test( value );
+}, "Only whole positive and negative digits allowed" );
+
+$.validator.addMethod( "decimal", function( value, element ) {
+    return this.optional( element ) || /^[\-+]?[0-9]+\.[0-9]+$/.test( value );
+}, "Please enter a decimal value" );

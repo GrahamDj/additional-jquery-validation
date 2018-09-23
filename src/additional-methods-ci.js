@@ -2,6 +2,13 @@
  * Additional jQuery Form Validation methods that match the rules used in CodeIgniter Form Validation
  */
 
+$.validator.addMethod( "exactlength", function( value, element, param ) {
+    if ( this.optional( element ) ) {
+        return true;
+    }
+    return value.length === parseInt(param);
+}, $.validator.format( "Value must have an exact length of {0} characters" ) );
+
 $.validator.addMethod( "inlist", function( value, element, param ) {
     if ( this.optional( element ) ) {
         return true;
